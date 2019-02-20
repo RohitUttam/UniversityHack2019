@@ -6,10 +6,10 @@ UniversityHack2019 - Reto Minsait Real Estate Modelling
 
 Equipo: AI|Learners
 
-Miembros: Alberto Fernandez de Marcos Giménez de los G.
+Miembros: Alberto Fernandez de Marcos GimÃ©nez de los G.
 	  Rohit Uttamchandani Dadlani
 
-Centro: Universidad Politécnica de Madrid (UPM)
+Centro: Universidad PolitÃ©cnica de Madrid (UPM)
 
 #######################################################
 
@@ -18,105 +18,105 @@ Centro: Universidad Politécnica de Madrid (UPM)
 1. Resumen del trabajo desarollado
 -------------------------------------------------------
 El tiempo que dedica un usuario a visitar un anuncio de vivienda, es un factor de gran relevancia que permite medir la calidad del mismo.
-El porcentaje de éxito en la venta o alquiler de una vivienda, dependerá en gran medida del mismo.
-En este documento se presentan las variables obtenidas a través de dos fuentes: una inmobiliaria (La Haya) y un gestor de anuncios web (idealista).
-Adicionalmente se disponen de analíticas y métricas sobre la interacción del usuario durante su visita al anuncio.
+El porcentaje de Ã©xito en la venta o alquiler de una vivienda, dependerÃ¡ en gran medida del mismo.
+En este documento se presentan las variables obtenidas a travÃ©s de dos fuentes: una inmobiliaria (La Haya) y un gestor de anuncios web (idealista).
+Adicionalmente se disponen de analÃ­ticas y mÃ©tricas sobre la interacciÃ³n del usuario durante su visita al anuncio.
 
 
-2. Análisis exploratorio.
+2. AnÃ¡lisis exploratorio.
 -------------------------------------------------------
-Partiendo de un dataset con 9958 y 53 variables, se ha procedido a añadir algunas variables adicionales, que en principio se han entendido como relevantes:
-· Número de imágenes por anuncio
-· Longitud del texto de la descripción
-· Características especiales (Piscina)
-· % Descuento: 100%*(Precio actual-Precio anterior)/Precio anterior
+Partiendo de un dataset con 9958 y 53 variables, se ha procedido a aÃ±adir algunas variables adicionales, que en principio se han entendido como relevantes:
+Â· NÃºmero de imÃ¡genes por anuncio
+Â· Longitud del texto de la descripciÃ³n
+Â· CaracterÃ­sticas especiales (Piscina)
+Â· % Descuento: 100%*(Precio actual-Precio anterior)/Precio anterior
 
-Tras añadir las variables al dataset, se ha procedido a realizar una exploración de datos no disponibles por atributo (missing values).
-Se ha procedido a calcular la matriz de correlaciones asi como la información mutua entre las variables, para encontrar variables irrelevantes y redundantes.
+Tras aÃ±adir las variables al dataset, se ha procedido a realizar una exploraciÃ³n de datos no disponibles por atributo (missing values).
+Se ha procedido a calcular la matriz de correlaciones asi como la informaciÃ³n mutua entre las variables, para encontrar variables irrelevantes y redundantes.
 
-3. Manipulación de variables
+3. ManipulaciÃ³n de variables
 -------------------------------------------------------
                              
-Se ha observado que la variable "HY_distribución" no se encuentra disponible en 6745 muestras, y el certificado energético en 8300.
-La provincia de origen, es una variable categórica que no se encuentra muy desequilabra (1700 muestras para Valencia y menos de 10 muestras para 15 provincias).
+Se ha observado que la variable "HY_distribuciÃ³n" no se encuentra disponible en 6745 muestras, y el certificado energÃ©tico en 8300.
+La provincia de origen, es una variable categÃ³rica que no se encuentra muy desequilabra (1700 muestras para Valencia y menos de 10 muestras para 15 provincias).
 Por tanto se asume independiente de la variable objetivo.
 
-Observando la distribución de la variable objetivo, se procede a mantener un 98.02% de las muestras, eliminando outliers (TARGET>300 s).
-Además se ha visto la irrelevancia de variables como "HY_ascensor" y "HY_cert_energ".
-Tras esto, se ha visto la distribución conjunta de cada una de las varibles con la variable objetivo, tratando de encontrar patrones.
+Observando la distribuciÃ³n de la variable objetivo, se procede a mantener un 98.02% de las muestras, eliminando outliers (TARGET>300 s).
+AdemÃ¡s se ha visto la irrelevancia de variables como "HY_ascensor" y "HY_cert_energ".
+Tras esto, se ha visto la distribuciÃ³n conjunta de cada una de las varibles con la variable objetivo, tratando de encontrar patrones.
 
-Según el tipo de viviendas, debido a la gran variedad de clases disponibles (20) se procede a la reducción de la cantidad de las mismas en este apartado, atendiendo a diferentes criterios y al contenido de la descripción.
+SegÃºn el tipo de viviendas, debido a la gran variedad de clases disponibles (20) se procede a la reducciÃ³n de la cantidad de las mismas en este apartado, atendiendo a diferentes criterios y al contenido de la descripciÃ³n.
 
-Finalmente se ha procedido con la imputación de los valores no disponibles (missing values), utilizando la mediana de los valores disponibles por provincia.
-Utilizando la mediana se garantiza la minimización del efecto de los outliers, frente a la utilización de la media.
+Finalmente se ha procedido con la imputaciÃ³n de los valores no disponibles (missing values), utilizando la mediana de los valores disponibles por provincia.
+Utilizando la mediana se garantiza la minimizaciÃ³n del efecto de los outliers, frente a la utilizaciÃ³n de la media.
 
-Una vez se ha preparado el dataset, se ha procedido a obtener la importancia de las varaibles en la predicción de la variable objetivo mediante un modelo de regressión basada en Random Forest.
-Se ha elegido este método por ser explicativo y proporcionar relaciones observables entre los atributos y la variable objetivo.
+Una vez se ha preparado el dataset, se ha procedido a obtener la importancia de las varaibles en la predicciÃ³n de la variable objetivo mediante un modelo de regressiÃ³n basada en Random Forest.
+Se ha elegido este mÃ©todo por ser explicativo y proporcionar relaciones observables entre los atributos y la variable objetivo.
 
 
-4. Justificación selección del modelo.
+4. JustificaciÃ³n selecciÃ³n del modelo.
 -------------------------------------------------------
 El modelo seleccionado ha sido el XGBoost (eXtreme Gradient Boosting) por ser explicativo, computacionalmente eficiente y preciso.
-Siendo un algoritmo de tipo "ensemble", ofrece soluciones que permiten combinar la capacidad de múltiples modelos, mejorando la predicción final.
+Siendo un algoritmo de tipo "ensemble", ofrece soluciones que permiten combinar la capacidad de mÃºltiples modelos, mejorando la predicciÃ³n final.
 
 
 Mejoras a introducir en la siguiente fase:
-· Reconocimiento de patrones en las imágenes mediante CNN de tipo regresión
-· 
-·
+Â· Reconocimiento de patrones en las imÃ¡genes mediante CNN de tipo regresiÃ³n
+Â· Algoritmo genÃ©tico para optimizaciÃ³n de hiperparÃ¡metros del XGBoost
+Â·
 
 
 Todas las variables iniciales:
-· HY_id 
-· HY_cod_postal
-· HY_provincia                        
-· HY_descripcion                     
-· HY_distribucion: no se encuentra disponible en 6745 muestras                     
-· HY_tipo                              
-· HY_antiguedad                     
-· HY_metros_utiles                   
-· HY_metros_totales                   
-· HY_num_banos                        
-· HY_cert_energ                     
-· HY_num_terrazas                       
-· HY_ascensor                           
-· HY_trastero                           
-· HY_num_garajes                        
-· HY_precio                             
-· HY_precio_anterior                 
-· IDEA_area                          
-· IDEA_poblacion                     
-· IDEA_densidad                     
-· IDEA_pc_1960                       
-· IDEA_pc_1960_69                    
-· IDEA_pc_1970_79                  
-· IDEA_pc_1980_89                    
-· IDEA_pc_1990_99                    
-· IDEA_pc_2000_10                    
-· IDEA_pc_comercio                   
-· IDEA_pc_industria                  
-· IDEA_pc_oficina                    
-· IDEA_pc_otros                      
-· IDEA_pc_residencial                
-· IDEA_pc_trast_parking              
-· IDEA_ind_tienda                    
-· IDEA_ind_turismo                   
-· IDEA_ind_alimentacion             
-· IDEA_ind_riqueza                   
-· IDEA_rent_alquiler                 
-· IDEA_ind_elasticidad               
-· IDEA_ind_liquidez                 
-· IDEA_unitprice_sale_residential    
-· IDEA_price_sale_residential        
-· IDEA_stock_sale_residential        
-· IDEA_demand_sale_residential       
-· IDEA_unitprice_rent_residential    
-· IDEA_price_rent_residential        
-· IDEA_stock_rent_residential        
-· IDEA_demand_rent_residential       
-· GA_page_views                         
-· GA_mean_bounce                        
-· GA_exit_rate                          
-· GA_quincena_ini                       
-· GA_quincena_ult                       
-· TARGET   
+Â· HY_id 
+Â· HY_cod_postal
+Â· HY_provincia                        
+Â· HY_descripcion                     
+Â· HY_distribucion: no se encuentra disponible en 6745 muestras                     
+Â· HY_tipo                              
+Â· HY_antiguedad                     
+Â· HY_metros_utiles                   
+Â· HY_metros_totales                   
+Â· HY_num_banos                        
+Â· HY_cert_energ                     
+Â· HY_num_terrazas                       
+Â· HY_ascensor                           
+Â· HY_trastero                           
+Â· HY_num_garajes                        
+Â· HY_precio                             
+Â· HY_precio_anterior                 
+Â· IDEA_area                          
+Â· IDEA_poblacion                     
+Â· IDEA_densidad                     
+Â· IDEA_pc_1960                       
+Â· IDEA_pc_1960_69                    
+Â· IDEA_pc_1970_79                  
+Â· IDEA_pc_1980_89                    
+Â· IDEA_pc_1990_99                    
+Â· IDEA_pc_2000_10                    
+Â· IDEA_pc_comercio                   
+Â· IDEA_pc_industria                  
+Â· IDEA_pc_oficina                    
+Â· IDEA_pc_otros                      
+Â· IDEA_pc_residencial                
+Â· IDEA_pc_trast_parking              
+Â· IDEA_ind_tienda                    
+Â· IDEA_ind_turismo                   
+Â· IDEA_ind_alimentacion             
+Â· IDEA_ind_riqueza                   
+Â· IDEA_rent_alquiler                 
+Â· IDEA_ind_elasticidad               
+Â· IDEA_ind_liquidez                 
+Â· IDEA_unitprice_sale_residential    
+Â· IDEA_price_sale_residential        
+Â· IDEA_stock_sale_residential        
+Â· IDEA_demand_sale_residential       
+Â· IDEA_unitprice_rent_residential    
+Â· IDEA_price_rent_residential        
+Â· IDEA_stock_rent_residential        
+Â· IDEA_demand_rent_residential       
+Â· GA_page_views                         
+Â· GA_mean_bounce                        
+Â· GA_exit_rate                          
+Â· GA_quincena_ini                       
+Â· GA_quincena_ult                       
+Â· TARGET   
