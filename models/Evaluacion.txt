@@ -1,2 +1,3 @@
 xgbRegressor_1403_15features (98% datos de modelar) = 25.5
 xgbRegressor_1403_10features (98% datos de modelar) = 25.0
+xgbRegressor_1403_10features (94% datos de modelar) = 20.0
