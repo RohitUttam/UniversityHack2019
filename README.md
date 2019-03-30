@@ -16,12 +16,12 @@ Adicionalmente se disponen de analíticas y métricas sobre la interacción del 
 Partiendo de un dataset con 9958 y 53 variables, se ha procedido a añadir algunas variables adicionales, que en principio se han entendido como relevantes:
 * Número de imágenes por anuncio
 * Longitud del texto de la descripción
-· Características especiales (Piscina)
-· % Descuento: 100%\(Precio actual-Precio anterior)/Precio anterior
-· Precio relativo con respecto a la zona
-· Cantidad de pixeles que forman parte de bordes en las imagenes
-· Luminosidad media de los pixeles de las imagenes
-· Cantidad de anuncios publicados en la zona que comprende el mismo código postal
+* Características especiales (Piscina)
+* % Descuento: 100%\(Precio actual-Precio anterior)/Precio anterior
+* Precio relativo con respecto a la zona
+* Cantidad de pixeles que forman parte de bordes en las imagenes
+* Luminosidad media de los pixeles de las imagenes
+* Cantidad de anuncios publicados en la zona que comprende el mismo código postal
 
 Tras añadir las variables al dataset, se ha procedido a realizar una exploración de datos no disponibles por atributo (missing values).
 Se ha procedido a calcular la matriz de correlaciones asi como la información mutua entre las variables, para encontrar variables irrelevantes y redundantes.
@@ -52,5 +52,5 @@ Siendo un algoritmo de tipo "ensemble", ofrece soluciones que permiten combinar 
 
 
 Mejoras a introducir:
-· Reconocimiento de patrones en las imágenes mediante CNN de tipo regresión
-· Algoritmo genético para optimización de hiperparámetros del XGBoost
+* Reconocimiento de patrones en las imágenes mediante CNN de tipo regresión
+* Algoritmo genético para optimización de hiperparámetros del XGBoost
