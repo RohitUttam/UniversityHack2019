@@ -14,10 +14,10 @@ Adicionalmente se disponen de analíticas y métricas sobre la interacción del 
 ### 2. Análisis exploratorio.
 -------------------------------------------------------
 Partiendo de un dataset con 9958 y 53 variables, se ha procedido a añadir algunas variables adicionales, que en principio se han entendido como relevantes:
-· Número de imágenes por anuncio
-· Longitud del texto de la descripción
+* Número de imágenes por anuncio
+* Longitud del texto de la descripción
 · Características especiales (Piscina)
-· % Descuento: 100%\*(Precio actual-Precio anterior)/Precio anterior
+· % Descuento: 100%\(Precio actual-Precio anterior)/Precio anterior
 · Precio relativo con respecto a la zona
 · Cantidad de pixeles que forman parte de bordes en las imagenes
 · Luminosidad media de los pixeles de las imagenes
